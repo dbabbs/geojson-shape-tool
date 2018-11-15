@@ -1,0 +1,76 @@
+<!<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shape Tool</title>
+   <!-- HERE LUI -->
+   <script src="js/lui-all.min.js"></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- WKT to GeoJSOn -->
+   <script src='js/terraformer.js'></script>
+   <script src='js/terraformer-wkt-parser.js'></script>
+   <!-- Leaflet -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+   <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+   <lui-desktoplayer-theme>
+      <div id="sidebar">
+         <lui-contextchromelayer-theme>
+            <div id="header">
+               <lui-logo>HERE</lui-logo>
+               <span class="lui-h4 header-title">GeoJSON Shape Tool</span>
+               <lui-spinner style="color: var(--lui-accent-color)"></lui-spinner>
+            </div>
+         </lui-contextchromelayer-theme>
+         <div id="inner-sidebar">
+            <p style="margin-bottom: 4px;" class="lui-body">Enter a country, state, city, or an address:</p>
+            <lui-textfield class="lui-small">
+               <input type="text" value="California" id="location" />
+            </lui-textfield>
+            <div class="group" id="level">
+               <p style="margin-bottom: 4px;" class="lui-body">Admin shape level:</p>
+               <lui-radiobutton-group>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="country">Country</label>
+                  </lui-radiobutton>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="state" checked>State</label>
+                  </lui-radiobutton>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="county">County</label>
+                  </lui-radiobutton>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="city">City</label>
+                  </lui-radiobutton>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="district">District</label>
+                  </lui-radiobutton>
+                  <lui-radiobutton class="lui-small">
+                     <label><input type="radio" value="postalCode">Postal Code</label>
+                  </lui-radiobutton>
+               </lui-radiobutton-group>
+            </div>
+            <div class="group">
+               <lui-button secondary class="lui-small" id="go">Search</lui-button>
+               <lui-button secondary class="lui-small" id="download">Download GeoJSON</lui-button>
+            </div>
+            <div id="xyz">
+               <a target="_blank" class="lui-body" style="color: #00b6b2" href="https://xyz.here.com">Upload your GeoJSON to XYZ Studio...</a>
+            </div>
+
+
+
+         </div>
+      </div>
+
+   </lui-desktoplayer-theme>
+
+
+   <div id="map"></div>
+</body>
+<script src="js/index.js"></script>
+
+</html>

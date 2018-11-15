@@ -1,0 +1,88 @@
+body, html {
+   border: 0;
+   padding: 0;
+   margin: 0;
+}
+
+#map {
+   height: 100vh;
+   width: 100vw;
+}
+
+#sidebar {
+   margin: 15px;
+   height: calc(100vh - 30px);
+   width: 300px;
+   left: 0;
+   position: absolute;
+   z-index: 5000;
+   background: var(--lui-background-color);
+   border-radius: 3px;
+}
+
+#header {
+   padding: 10px;
+   background: var(--lui-background-color);
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+   display: flex;
+   align-items: center;
+}
+
+#header lui-logo {
+   padding-right: 15px;
+}
+#header span {
+  padding-right: 15px;
+}
+
+.header-title {
+   font-weight: 500;
+   font-size: 16px;
+}
+
+.section-title {
+   font-weight: 500;
+   font-size: 16px;
+   margin: 15px 0 10px 0;
+}
+
+lui-spinner {
+  display: none;
+}
+
+#inner-sidebar {
+   padding: 15px 15px;
+   overflow-y: auto;
+   height: calc(100% - 80px);
+}
+
+.form-group {
+   margin-bottom: 10px;
+}
+
+.form-title {
+   margin-bottom: 5px;
+
+}
+
+.lui-body {
+   font-size: 14px;
+}
+
+#download {
+   display: none;
+}
+
+.group {
+   margin: 10px 0;
+}
+
+a {
+   text-decoration: none;
+   color: #00b6b2;
+}
+
+#xyz {
+   margin-top: 40px;
+}
