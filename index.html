@@ -31,7 +31,7 @@
                <input type="text" value="California" id="location" />
             </lui-textfield>
             <div class="group" id="level">
-               <p style="margin-bottom: 4px;" class="lui-body">Admin shape level:</p>
+               <p style="margin-bottom: 5px;" class="lui-body">Admin shape level:</p>
                <lui-radiobutton-group>
                   <lui-radiobutton class="lui-small">
                      <label><input type="radio" value="country">Country</label>
@@ -57,11 +57,21 @@
                <lui-button secondary class="lui-small" id="go">Search</lui-button>
                <lui-button secondary class="lui-small" id="download">Download GeoJSON</lui-button>
             </div>
-            <div id="xyz">
-               <a target="_blank" class="lui-body" style="color: #00b6b2" href="https://xyz.here.com">Upload your GeoJSON to XYZ Studio...</a>
+            <div class="group hide">
+
+
+            <p class="lui-body">Add feature to XYZ Space</p>
+            <p class="lui-body">XYZ Space</p>
+            <lui-textfield class="lui-small">
+               <input type="text" value="" id="xyz-space" />
+            </lui-textfield>
+            <p class="lui-body">XYZ Token</p>
+            <lui-textfield class="lui-small">
+               <input type="text" value="" id="xyz-token" />
+            </lui-textfield>
+            <lui-button secondary class="lui-small" id="xyz">Add feature to XYZ Space</lui-button>
             </div>
-
-
+            <a id="xyz-view" target="_blank" href=""><lui-button secondary class="lui-small">View feature in Space Viewer</lui-button></a>
 
          </div>
       </div>
