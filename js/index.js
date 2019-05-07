@@ -100,37 +100,18 @@ $('#go').onclick = () => {
 
          map.fitBounds(geoJsonLayer.getBounds());
 
+         const toDownload = {
+            type: 'FeatureCollection',
+            features: [geojson]
+         }
+         console.log(toDownload);
          $('lui-spinner').style.display = 'none';
          $('#download').style.display = 'inline-block'
          $('.hide').style.display = 'block';
          $('#download').onclick = () => {
-            download(geojson, `${$('#location').value}.geojson`)
+            download(toDownload, `${$('#location').value}.geojson`)
          }
-         const id = randomId();
-         console.log(geojson)
-         $('#xyz').onclick = () => {
-            geojson.id = id;
-            const xyzToken = $('#xyz-token').value;
-            const xyzId = $('#xyz-space').value
-            $('lui-spinner').style.display = 'block';
-            fetch(`https://xyz.api.here.com/hub/spaces/${xyzId}/features/${id}`, {
-               method: "PUT",
-               headers: {
-                  'accept': 'application/geo+json',
-                  'Authorization': `Bearer ${xyzToken}`,
-                  'Content-Type': 'application/geo+json',
-               },
-               body: JSON.stringify(geojson), // body data type must match "Content-Type" header
-            }).then(res => {
-               $('#xyz-view').style.display = 'block';
-               $('#xyz-view').href = `http://geojson.tools/index.html?url=https://xyz.api.here.com/hub/spaces/${xyzId}/search?limit=5000&access_token=${xyzToken}`
-               $('lui-spinner').style.display = 'none';
-               console.log(res)
-            }).catch(error => {
-               console.log(error);
-            })
 
-         }
       })
    })
 }
