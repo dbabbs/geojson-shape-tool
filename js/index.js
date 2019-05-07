@@ -107,8 +107,8 @@ $('#go').onclick = () => {
          console.log(toDownload);
          $('lui-spinner').style.display = 'none';
          $('#download').style.display = 'inline-block'
-         $('.hide').style.display = 'block';
          $('#download').onclick = () => {
+            console.log('here')
             download(toDownload, `${$('#location').value}.geojson`)
          }
 
